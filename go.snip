@@ -23,24 +23,59 @@ abbr goa design Resource declaration
 		}
 	})
 
-snippet goa-action
+snippet goa-action-get
 abbr goa design Action declaration
 	Action("${1:name}", func() {
 		Description("${2:Description}")
-		Routing(${3:Routing})
-		${4:Param}
+		Routing(GET(${3:Routing}))
+		$4:Param
 		Response(OK)
 		Response(NotFound)
 	})
 
-snippet goa-routing-get
-abbr goa design Routing GET declaration
-	GET("/${1:route}")
+snippet goa-action-post
+abbr goa design Action declaration
+	Action("${1:name}", func() {
+		Description("${2:Description}")
+		Routing(POST(${3:Routing}))
+		$4:Param
+		Response(OK)
+		Response(NotFound)
+	})
 
-snippet goa-routing-post
-abbr goa design Routing POST declaration
-	POST("/${1:route}")
+snippet goa-action-patch
+abbr goa design Action declaration
+	Action("${1:name}", func() {
+		Description("${2:Description}")
+		Routing(PATCH(${3:Routing}))
+		$4:Param
+		Response(OK)
+		Response(NotFound)
+	})
 
-snippet goa-routing-patch
-abbr goadesign Routing PATCH declaration
-	PATCH("/${1:route}")
+snippet goa-action-put
+abbr goa design Action declaration
+	Action("${1:name}", func() {
+		Description("${2:Description}")
+		Routing(PUT(${3:Routing}))
+		$4:Param
+		Response(OK)
+		Response(NotFound)
+	})
+
+snippet goa-action-delete
+abbr goa design Action declaration
+	Action("${1:name}", func() {
+		Description("${2:Description}")
+		Routing(DELETE(${3:Routing}))
+		
+		Response(OK)
+		Response(NotFound)
+	})
+
+snippet goa-params
+abbr goa design Params declaration
+	Params(func() {
+		Param("$1:param", $2:type, "$3:Description")
+		Required("$4:param")
+	})
