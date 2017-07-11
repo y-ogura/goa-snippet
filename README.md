@@ -1,11 +1,11 @@
 
 ## 使い方
-`~/.vim/bundle/neosnippet-snippets/snippets`
-上記ディレクトリに`go.snip`を配置
+`~/.vim/bundle/neosnippet-snippets/snippets`<br>
+上記ディレクトリに`go.snip`を配置<br>
 
-`.vimrc`に下記を追加
+`.vimrc`に下記を追加<br>
 `let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/'`
-
+<br>
 さらにsnippet用のコマンドの設定
 ```
 " <TAB>: completion.
