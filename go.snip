@@ -1,0 +1,46 @@
+snippet goa-import
+abbr goa design import
+	. "github.com/goadesign/goa/design"
+	. "github.com/goadesign/goa/design/apidsl"
+
+
+snippet goa-api
+abbr goa design API declaration
+	var _ =API("${1:api name}", func() {
+		Title("${2:${1:api name}}")
+		Description("${3:Description}")
+		Scheme("${4:http}")
+		Host("${5:localhost:8080}")
+	})
+
+snippet goa-resource
+abbr goa design Resource declaration
+	var _ = Resource("${1:name}", func() {
+		BasePath("${2:path}")
+		DefaultMedia(${3:media})
+		
+		${4:Action}
+		}
+	})
+
+snippet goa-action
+abbr goa design Action declaration
+	Action("${1:name}", func() {
+		Description("${2:Description}")
+		Routing(${3:Routing})
+		${4:Param}
+		Response(OK)
+		Response(NotFound)
+	})
+
+snippet goa-routing-get
+abbr goa design Routing GET declaration
+	GET("/${1:route}")
+
+snippet goa-routing-post
+abbr goa design Routing POST declaration
+	POST("/${1:route}")
+
+snippet goa-routing-patch
+abbr goadesign Routing PATCH declaration
+	PATCH("/${1:route}")
