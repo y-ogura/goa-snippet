@@ -68,7 +68,7 @@ abbr goa design Action declaration
 	Action("${1:name}", func() {
 		Description("${2:Description}")
 		Routing(DELETE(${3:Routing}))
-		
+		$4:Param
 		Response(OK)
 		Response(NotFound)
 	})
@@ -76,6 +76,18 @@ abbr goa design Action declaration
 snippet goa-params
 abbr goa design Params declaration
 	Params(func() {
-		Param("$1:param", $2:type, "$3:Description")
-		Required("$4:param")
+		Param("${1:param}", ${2:type}, "${3:Description}")
+		Required("${4:param}")
+	})
+
+snippet goa-MediaType
+abbr goa design MediaType declaration
+	var ${1:mediaName} = MediaType("application/vnd.${2:json}+json", func() {
+		Description("${3:Description}")
+		Attributes(func() {
+		
+		})
+		View("default", func() {
+		
+		})
 	})
