@@ -1,12 +1,14 @@
 snippet goa-import
+alias goa
 abbr goa design import
 	. "github.com/goadesign/goa/design"
 	. "github.com/goadesign/goa/design/apidsl"
 
 
 snippet goa-api
+alias api
 abbr goa design API declaration
-	var _ =API("${1:api name}", func() {
+	var _ = API("${1:api name}", func() {
 		Title("${2:${1:api name}}")
 		Description("${3:Description}")
 		Scheme("${4:http}")
@@ -14,16 +16,17 @@ abbr goa design API declaration
 	})
 
 snippet goa-resource
+alias resource
 abbr goa design Resource declaration
 	var _ = Resource("${1:name}", func() {
 		BasePath("${2:path}")
 		DefaultMedia(${3:media})
 		
 		${4:Action}
-		}
 	})
 
 snippet goa-action-get
+alias action-get
 abbr goa design Action declaration
 	Action("${1:name}", func() {
 		Description("${2:Description}")
@@ -34,6 +37,7 @@ abbr goa design Action declaration
 	})
 
 snippet goa-action-post
+alias action-post
 abbr goa design Action declaration
 	Action("${1:name}", func() {
 		Description("${2:Description}")
@@ -44,6 +48,7 @@ abbr goa design Action declaration
 	})
 
 snippet goa-action-patch
+alias action-patch
 abbr goa design Action declaration
 	Action("${1:name}", func() {
 		Description("${2:Description}")
@@ -54,6 +59,7 @@ abbr goa design Action declaration
 	})
 
 snippet goa-action-put
+alias action-put
 abbr goa design Action declaration
 	Action("${1:name}", func() {
 		Description("${2:Description}")
@@ -64,6 +70,7 @@ abbr goa design Action declaration
 	})
 
 snippet goa-action-delete
+alias action-delete
 abbr goa design Action declaration
 	Action("${1:name}", func() {
 		Description("${2:Description}")
@@ -74,6 +81,7 @@ abbr goa design Action declaration
 	})
 
 snippet goa-params
+alias param
 abbr goa design Params declaration
 	Params(func() {
 		Param("${1:param}", ${2:type}, "${3:Description}")
@@ -81,6 +89,7 @@ abbr goa design Params declaration
 	})
 
 snippet goa-MediaType
+alias media
 abbr goa design MediaType declaration
 	var ${1:mediaName} = MediaType("application/vnd.${2:json}+json", func() {
 		Description("${3:Description}")
@@ -91,3 +100,91 @@ abbr goa design MediaType declaration
 		
 		})
 	})
+
+snippet goa-attribute
+alias attribute
+abbr goa design Attribute declaration
+	Attribute("${1:name}")
+
+snippet goa-attribute-dsl
+alias attribute-dsl
+abbr goa design Attribute declaration with dsl
+	Attribute("${1:name}", func() {
+	
+	})
+
+
+snippet goa-attribute-dataType
+alias attribute-dataType
+abbr goa design Attribute declaration with dataType
+	Attribute("${1:name}", ${2:dataType})
+
+snippet goa-attribute-dataType-dsl
+alias attribute-dataType-dsl
+abbr goa design Attribute declaration with dataType and dsl
+	Attribute("${1:name}", ${2:dataType}, func() {
+	
+	})
+
+
+snippet goa-attribute-dataType-description
+alias attribute-dataType-description
+abbr goa design Attribute declaration with dataType and description
+	Attribute("${1:name}", ${2:dataType}, "${3:description}")
+
+
+snippet goa-attribute-dataType-description-dsl
+alias attribute-dataType-description-dsl
+abbr goa design Attribute declaration with dataType, description and dsl
+	Attribute("${1:name}", ${2:dataType}, "${3:description}", func() {
+	
+	})
+
+snippet goa-payload
+alias payload
+abbr goa design Payload declaration
+	var ${1:name} = Type("${1:name}", func() {
+		
+		Required()
+	})
+
+snippet goa-member
+alias member
+abbr goa design Member declaration
+	Member("${1:name}")
+
+snippet goa-member-dsl
+alias member-dsl
+abbr goa design Member declaration with dsl
+	Member("${1:name}", func() {
+	
+	})
+
+
+snippet goa-member-dataType
+alias member-dataType
+abbr goa design Member declaration with dataType
+	Member("${1:name}", ${2:dataType})
+
+snippet goa-member-dataType-dsl
+alias member-dataType-dsl
+abbr goa design Member declaration with dataType and dsl
+	Member("${1:name}", ${2:dataType}, func() {
+	
+	})
+
+
+snippet goa-member-dataType-description
+alias member-dataType-description
+abbr goa design Member declaration with dataType and description
+	Member("${1:name}", ${2:dataType}, "${3:description}")
+
+
+snippet goa-member-dataType-description-dsl
+alias member-dataType-description-dsl
+abbr goa design Member declaration with dataType, description and dsl
+	Member("${1:name}", ${2:dataType}, "${3:description}", func() {
+	
+	})
+
+
