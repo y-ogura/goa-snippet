@@ -1,12 +1,12 @@
 
-## 使い方
+## Usage
 `~/.vim/bundle/neosnippet-snippets/snippets`<br>
-上記ディレクトリに`go.snip`を配置<br>
+Set `go.snip` here<br>
 
-`.vimrc`に下記を追加<br>
+Add to `.vimrc`<br>
 `let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/'`
 <br>
-さらにsnippet用のコマンドの設定
+Add a command for snippet
 ```
 " <TAB>: completion.
 " inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -26,6 +26,7 @@ if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
 ```
-を追加
 
-.goファイルで`goa`と打ち込んでTABで選択して`Ctrl+k`で展開
+
+
+In the .go file, type `goa`, select it with TAB and expand it with `Ctrl+k`
